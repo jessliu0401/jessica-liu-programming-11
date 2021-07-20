@@ -10,7 +10,7 @@ public class main {
 
     public static void main(String[] args) {
         String[] names = {"bob", "lee", "dav"};
-        names = AddBehind(names);
+        names = AddMiddle(names, 2, "jake");
         System.out.println(names[0]);
         System.out.println(names[1]);
         System.out.println(names[2]);
@@ -20,14 +20,13 @@ public class main {
 
     // method 1: add values to end of array
 
-    public static String[] AddBehind(String[] names) {
+    public static String[] AddBehind(String[] names, String added) {
         String[] morenames = new String[names.length + 1];
 
         for (int i = 0; i < names.length; i++) {
             morenames[i] = names[i];
         }
-        Scanner scanner = new Scanner(System.in);
-        morenames[morenames.length - 1] = scanner.next();
+        morenames[morenames.length - 1] = added;
         return morenames;
     }
 
@@ -42,14 +41,13 @@ public class main {
 
     // method 3: add values in the middle of array
     // put the position you want the text to be in the new array at int pos
-    public static String[] AddMiddle(String[] names, int pos) {
+    public static String[] AddMiddle(String[] names, int pos, String added) {
         String[] insertnames = new String[names.length + 1];
         for (int i = 0; i < insertnames.length; i++) {
             if (i < pos) {
                 insertnames[i] = names[i];
             } else if (i == pos) {
-                Scanner scanner = new Scanner(System.in);
-                insertnames[i] = scanner.next();
+                insertnames[i] = added;
             } else if (i > pos) {
                 insertnames[i] = names[i - 1];
             }
