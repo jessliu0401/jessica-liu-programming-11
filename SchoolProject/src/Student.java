@@ -58,7 +58,10 @@ public class Student {
     public void setGrade(int grade) {
         this.grade = grade;
     }
+
+
+    //override
     public String toString(){
-        return "Name:"+ this.firstName + " " + this.lastName + " grade:" + this.grade;
+        return "Name:"+ this.firstName + " " + this.lastName + " grade:" + this.grade + " student ID:" + studentID + "  ";
     }
 }

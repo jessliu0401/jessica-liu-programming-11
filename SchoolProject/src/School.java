@@ -70,8 +70,16 @@ public class School {
 
 
     //delete teacher from list method
-
+public void deleteTeacher(int index){
+        teachers.remove(index);
+}
     // add student to list method
+    public void oneStudent(String firstname, String lastname, int grade){
+        students.add(new Student(firstname,lastname,grade));
+
+
+    }
+
 //add 10 students to list
     public void tenStudent(){
         for (int i = 0; i < 10; i++) {
@@ -80,7 +88,9 @@ public class School {
     }
 
 //delete student from list
-
+public void deleteStudent(int ID){
+        students.remove(ID);
+}
     //show all teachers(how to return arraylist)
     public void showTeacher() {
         System.out.println(teachers);
@@ -90,11 +100,11 @@ public class School {
 
     //show all students
     public void showStudents() {
-        System.out.print(students);
+        System.out.println(students);
     }
 }
 
-//override
+
 
 
 
