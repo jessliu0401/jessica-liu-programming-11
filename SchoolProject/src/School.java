@@ -10,7 +10,7 @@
         Add a student to list
         Delete teacher from list
         Delete student from list
-        Show all Teachers(can add stuff to teacher list but cannot print the teacher arraylist)
+        Show all Teachers
         Show all Students
         Appropriate constructor*/
 
@@ -73,11 +73,10 @@ public class School {
 public void deleteTeacher(int index){
         teachers.remove(index);
 }
+
     // add student to list method
     public void oneStudent(String firstname, String lastname, int grade){
         students.add(new Student(firstname,lastname,grade));
-
-
     }
 
 //add 10 students to list
@@ -91,11 +90,10 @@ public void deleteTeacher(int index){
 public void deleteStudent(int ID){
         students.remove(ID);
 }
-    //show all teachers(how to return arraylist)
+
+    //show all teachers
     public void showTeacher() {
         System.out.println(teachers);
-
-
     }
 
     //show all students
@@ -103,6 +101,7 @@ public void deleteStudent(int ID){
         System.out.println(students);
     }
 }
+
 
 
 
