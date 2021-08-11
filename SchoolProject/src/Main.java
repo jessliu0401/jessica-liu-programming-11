@@ -21,10 +21,17 @@ public class Main {
         school.showTeacher();
         //add 10 student to list(for this part you can use the tenStudent method in the school class as well)
         //school.tenStudent();
-        
-        for(int i = 0; i < 10; i++){
-            school.students.add(new Student());
-        }
+
+        school.oneStudent("john","ning",11);
+        school.oneStudent("karina","law",9);
+        school.oneStudent("giselle","tam",10);
+        school.oneStudent("winter","kim",12);
+        school.oneStudent("james","moriaty",12);
+        school.oneStudent("jean","kierstan",10);
+        school.oneStudent("kaeya","alberich",10);
+        school.oneStudent("ayaka","kamisato",11);
+        school.oneStudent("yuji","itadori",10);
+        school.oneStudent("megumi","fushiguro",12);
         //print student list
         school.showStudents();
 
