@@ -16,7 +16,7 @@ public class Deposit {
     }
 
     //test
-    //requires: deposits arraylist
+    //requires: nothing
     //modifies: nothing
     // effect: print out items in deposits arraylist( will print blank if there's no items)
     public String toString(){
