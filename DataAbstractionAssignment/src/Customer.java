@@ -39,6 +39,10 @@ public class Customer {
 
     Customer(){
         //create default constructor
+        name = "test";
+        accountNumber = 11111;
+        checkBalance = 100.0;
+        savingBalance = 100.0;
     }
     Customer(String name, int accountNumber, double checkDeposit, double savingDeposit){
         this.name = name;
@@ -52,7 +56,7 @@ public class Customer {
 modifies: this, deposits
 effects: add to deposit list, add amt to balance
  */
-//写test
+
     public double deposit(double amt, Date date, String account){ //account:checking/saving
         Deposit deposit = new Deposit(amt, date, account);
         deposits.add(deposit);//cannot access private arraylist from same class
@@ -67,7 +71,8 @@ modifies: this, withdraws
 effects: deletes amt from balance if there's sufficient balance for withdraws, add one item to withdraw list,
 return amt
  */
-    // 写test
+    //if there's not enough money to do the whole withdraw in the account,
+// a new item would still be created that writes 0.0 as its amount
         public double withdraw(double amt, Date date, String account) {
             double x = 0.0;
             // if the account has not gone over overdraft
@@ -94,7 +99,9 @@ return amt
 
 
 
-
+//requires: account string, a positive double
+    //modifies: nothing
+    //effects: checks if the customer tried to withdraw a certain amount will it go over the overdraft amount
     private boolean checkOverdraft(String account, double amt){
             if(account.equals(CHECKING)){
                 if (checkBalance - amt < OVERDRAFT){

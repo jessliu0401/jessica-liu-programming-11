@@ -1,4 +1,5 @@
-// I had to use JUnit 4 instead of 5 here because my system kept on running into problems when trying to download junit 5
+// I had to use JUnit 4 instead of 5 here
+// because my system kept on running into problems when trying to download junit 5
 import org.junit.Before;
 import org.junit.Test;
 
@@ -38,6 +39,35 @@ public class Testcase {
     }
 
     @Test
+    public void testSavingWithdraw(){
+        Date date = new Date();
+        //withdraw money
+        assertEquals(bob.getSavingBalance(),100.0,0.0);
+        bob.withdraw(10.0,date,"Saving");
+        assertEquals(bob.getSavingBalance(),90.0,0.0);
+        assertEquals(bob.getWithdraws().size(), 1);
+        //try to withdraw too much that it goes over to overdraft(No withdraw would be made as it is rejected)
+        bob.withdraw(200.0,date,"Saving");
+        assertEquals(bob.getSavingBalance(),90.0,0.0);
+        assertEquals(bob.getWithdraws().size(), 2);//(one more item will stil be added to withdraw list)
+    }
+
+    @Test public void testCheckingWithdraw(){
+            Date date = new Date();
+            //withdraw money
+            assertEquals(bob.getSavingBalance(),100.0,0.0);
+            bob.withdraw(10.0,date,"Checking");
+            assertEquals(bob.getCheckBalance(),90.0,0.0);
+            assertEquals(bob.getWithdraws().size(), 1);
+            //try to withdraw too much that it goes over to overdraft(No withdraw would be made as it is rejected)
+            bob.withdraw(200.0,date,"Checking");
+            assertEquals(bob.getCheckBalance(),90.0,0.0);
+            assertEquals(bob.getWithdraws().size(), 2);
+        //(one more item will still be added to withdraw list, just that the amount will said 0 as it was rejected)
+
+    }
+
+    @Test
     public void testDepositToString(){
             Date date = new Date();
             //make sure there's nothing in the list
@@ -49,6 +79,7 @@ public class Testcase {
             //compare between actual and expected
             assertEquals(s,"Deposit of:" + "10.0" + " Date:" + date + " into account: " + "Saving" +"]\n");
     }
+
     @Test
     public void testWithdrawToString(){
         Date date = new Date();
@@ -61,12 +92,5 @@ public class Testcase {
         //compare
         assertEquals(s,"Withdraw of:" + "10.0" + " Date:" + date + " from account: " + "Saving" +"]\n");
 }
-/*Date date = new Date();
-        //make sure there's nothing in the list
-        assertEquals(bob.getDeposits().size(), 0);
-        bob.deposit(10.0,date,"Saving");
-        assertEquals(bob.getDeposits().size(),1);
-        String array[]= new String[bob.getDeposits().size()];
-        array[0] = Deposit.toString();
-        assertEquals(array[0],"Deposit of:" + "10.0" + "    Date:" + date + " into account: " + "Saving" + "]\n");*/
+
 }

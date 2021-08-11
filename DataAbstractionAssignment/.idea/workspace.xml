@@ -106,7 +106,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Testcase.testDepositToString">
+  <component name="RunManager" selected="JUnit.Testcase.testWithdrawToString">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="DataAbstractionAssignment" />
@@ -114,11 +114,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Testcase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Testcase.testCheckingWithdraw" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DataAbstractionAssignment" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Testcase" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="testCheckingWithdraw" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -133,11 +134,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Testcase.testSavingDeposit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Testcase.testSavingWithdraw" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DataAbstractionAssignment" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Testcase" />
-      <option name="METHOD_NAME" value="testSavingDeposit" />
+      <option name="METHOD_NAME" value="testSavingWithdraw" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -155,11 +156,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Testcase.testDepositToString" />
         <item itemvalue="JUnit.Testcase.testWithdrawToString" />
+        <item itemvalue="JUnit.Testcase.testDepositToString" />
+        <item itemvalue="JUnit.Testcase.testCheckingWithdraw" />
+        <item itemvalue="JUnit.Testcase.testSavingWithdraw" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.Testcase.testSavingDeposit" />
-        <item itemvalue="JUnit.Testcase" />
       </list>
     </recent_temporary>
   </component>
