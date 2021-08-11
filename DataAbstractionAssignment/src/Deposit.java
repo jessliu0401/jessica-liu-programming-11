@@ -11,7 +11,15 @@ public class Deposit {
         this.account = account;
     }
 
+    public double getAmount() {
+        return amount;
+    }
+
+    //test
+    //requires: deposits arraylist
+    //modifies: nothing
+    // effect: print out items in deposits arraylist( will print blank if there's no items)
     public String toString(){
-        return "Deposit of:" + this.amount + "    Date:" + this.date + " into account" + this.account;
+        return "Deposit of:" + amount + " Date:" + date + " into account: " + account + "]\n";
     }
 }

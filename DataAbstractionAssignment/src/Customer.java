@@ -4,8 +4,8 @@ import java.util.Date;
 
 public class Customer {
     private int accountNumber;
-    private ArrayList<Deposit> deposits;
-    private ArrayList<Withdraw> withdraws;
+    private ArrayList<Deposit> deposits = new ArrayList<>();
+    private ArrayList<Withdraw> withdraws = new ArrayList<>();
     private double checkBalance;
     private double savingBalance;
     private double savingRate;
@@ -14,18 +14,43 @@ public class Customer {
     public static final String SAVING = "Saving";
     private final int OVERDRAFT = -100;
 
+    public ArrayList<Deposit> getdeposits(){
+        return deposits;
+    }
+    public ArrayList<Withdraw> getwithdraws(){
+        return withdraws;
+    }
+    public double getCheckBalance(){
+        return checkBalance;
+    }
+
+    public ArrayList<Deposit> getDeposits() {
+        return deposits;
+    }
+
+    public ArrayList<Withdraw> getWithdraws() {
+        return withdraws;
+    }
+
+    public double getSavingBalance(){
+        return savingBalance;
+    }
+
+
     Customer(){
         //create default constructor
     }
     Customer(String name, int accountNumber, double checkDeposit, double savingDeposit){
         this.name = name;
         this.accountNumber = accountNumber;
-        //what should checkDeposit and savingDeposit do
+        this.checkBalance = checkDeposit;
+        this.savingBalance = savingDeposit;
+
 
     }
 /*requires: positive double, a date, account string
-modifies: deposit list, balance
-effects: one more item in deposit list, balance + amt
+modifies: this, deposits
+effects: add to deposit list, add amt to balance
  */
 //写test
     public double deposit(double amt, Date date, String account){ //account:checking/saving
@@ -37,49 +62,46 @@ effects: one more item in deposit list, balance + amt
         else {checkBalance = checkBalance + amt;
     }
         return amt;}
-/*requires: positive double, date, account
-modifies: withdraw arraylist, balance
-effect： if there's enough money in account to withdraw, one more item in deposit list, balance - amt
-if there's not enough money in account, one more item in deposit list, balance = -100
+/*requires: positive double for amount, new date(), account(checking/saving)
+modifies: this, withdraws
+effects: deletes amt from balance if there's sufficient balance for withdraws, add one item to withdraw list,
+return amt
  */
     // 写test
         public double withdraw(double amt, Date date, String account) {
+            double x = 0.0;
             // if the account has not gone over overdraft
             if (savingBalance > OVERDRAFT ||checkBalance > OVERDRAFT ) {
                 //saving account
                 if (account.equals(SAVING)) {
-                    //when there's not enough money in the account to do the whole withdrawal
                     if (savingBalance - amt < OVERDRAFT) {
-                        //withdraw until the account reaches -100
-                        OVERDRAFT + double x = savingBalance;//??????
-                        amt = x;
-                        savingBalance = OVERDRAFT; }
-                    else { savingBalance = savingBalance - amt; }}
+                        x = 0.0; }
+                    else { savingBalance = savingBalance - amt;
+                   x = amt;}}
                 //*******************************************************
                 else { if(checkBalance - amt < OVERDRAFT) {
-                        checkBalance - double x = -100;//??????
-                    amt = x;
-                    checkBalance = OVERDRAFT; }
-                    else{checkBalance = checkBalance - amt;} }
+                     x = 0.0; }
+                    else{checkBalance = checkBalance - amt;
+                     x = amt;} }
 
-                withdraws.add(new Withdraw(amt, date, account));
-                return -amt;}
+                withdraws.add(new Withdraw( x, date, account));
+                return amt;}
+
             //if not enough money in either account
-            else {
-                withdraws.add(new Withdraw(0.0, date, account));
-                return 0.0; }
+            else { withdraws.add(new Withdraw(0.0, date, account));
+                return amt; }
         }
 
 
 
 
-    private boolean checkOverdraft(String account){
+    private boolean checkOverdraft(String account, double amt){
             if(account.equals(CHECKING)){
-                if (checkBalance > 0.0){
-                    return false; }
-                else return true;
+                if (checkBalance - amt < OVERDRAFT){
+                    return true; }
+                else return false;
             }
-            else { if (savingBalance > 0.0){
+            else { if (savingBalance - amt < OVERDRAFT){
                 return false;}
                 else return true; }
 

@@ -10,9 +10,11 @@ public class Withdraw {
         this.date = date;
         this.account = account;
     }
-
+//test
+//requires: withdraws arraylist
+//modifies: nothing
+// effect: print out items in withdraws arraylist( will print blank if there's no items)
     public String toString(){
-
-        return "Withdraw of:" + this.amount + "    Date:" + this.date + " from account" + this.account;
+        return "Withdraw of:" + this.amount + " Date:" + this.date + " from account: " + this.account +"]\n";
     }
 }
