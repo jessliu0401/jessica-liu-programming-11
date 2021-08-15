@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="GUI">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/GUI game of chance/out/artifacts/GUI_jar/GUI.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

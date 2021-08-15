@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Label text="Player 1 score                                                                                                      Player 2 score" textAlignment="JUSTIFY">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <VBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="50.0">
+               <children>
+                  <Label fx:id="p1Score" prefHeight="51.0" prefWidth="96.0" text="0" textAlignment="RIGHT">
+                     <font>
+                        <Font size="41.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" />
+            <VBox prefHeight="200.0" prefWidth="100.0" />
+            <VBox prefHeight="200.0" prefWidth="100.0" />
+            <VBox prefHeight="200.0" prefWidth="100.0" />
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label fx:id="p2Score" text="0">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <Label text="P1 roll                                                                                                                  p2 roll" textAlignment="JUSTIFY">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <HBox nodeOrientation="RIGHT_TO_LEFT" prefHeight="110.0" prefWidth="593.0">
+         <children>
+            <VBox alignment="TOP_RIGHT" prefHeight="110.0" prefWidth="132.0">
+               <children>
+                  <Label fx:id="p2roll" text="rolling....">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" />
+            <VBox prefHeight="110.0" prefWidth="44.0">
+               <children>
+                  <Label fx:id="p2status" />
+               </children>
+            </VBox>
+            <VBox prefHeight="110.0" prefWidth="210.0">
+               <children>
+                  <Label fx:id="p1Status" />
+                  <TextArea prefHeight="200.0" prefWidth="200.0" text="Rules: two players each roll a dice&#10;whoever gets the higher number &#10;recieves 1 point(each get 1 point &#10;for ties)&#10;&#10;the player who reach 10 point first &#10;wins" />
+               </children>
+            </VBox>
+            <VBox prefHeight="110.0" prefWidth="43.0" />
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label fx:id="p1Roll" text="rolling....">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" />
+            <VBox prefHeight="200.0" prefWidth="100.0" />
+            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="348.0">
+               <children>
+                  <Button fx:id="rollButton" mnemonicParsing="false" onAction="#roll" prefHeight="62.0" prefWidth="73.0" text="roll">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" />
+            <VBox prefHeight="200.0" prefWidth="100.0" />
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

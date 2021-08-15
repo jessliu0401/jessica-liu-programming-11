@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DataAbstractionAssignment/DataAbstractionAssignment.iml" filepath="$PROJECT_DIR$/DataAbstractionAssignment/DataAbstractionAssignment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Expressions Assignment/Expressions Assignment.iml" filepath="$PROJECT_DIR$/Expressions Assignment/Expressions Assignment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GUI game of chance/GUI game of chance.iml" filepath="$PROJECT_DIR$/GUI game of chance/GUI game of chance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ProjectNumber1/ProjectNumber1.iml" filepath="$PROJECT_DIR$/ProjectNumber1/ProjectNumber1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rock paper scissor with loops/Rock paper scissor with loops.iml" filepath="$PROJECT_DIR$/Rock paper scissor with loops/Rock paper scissor with loops.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SchoolProject/SchoolProject.iml" filepath="$PROJECT_DIR$/SchoolProject/SchoolProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/add insert delete arrays/add insert delete arrays.iml" filepath="$PROJECT_DIR$/add insert delete arrays/add insert delete arrays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/jessica-liu-programming-11.iml" filepath="$PROJECT_DIR$/.idea/jessica-liu-programming-11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rock paper scissors/rock paper scissors.iml" filepath="$PROJECT_DIR$/rock paper scissors/rock paper scissors.iml" />
+      <module fileurl="file://$PROJECT_DIR$/string encryption/string encryption.iml" filepath="$PROJECT_DIR$/string encryption/string encryption.iml" />
+    </modules>
+  </component>
+</project>
