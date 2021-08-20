@@ -34,6 +34,9 @@ public class Controller {
     public void showFriend(MouseEvent mouseEvent) {
         Friends friends;
         friends = friendList.getSelectionModel().getSelectedItem();
+        if(friendList.getSelectionModel().getSelectedItem() == null){
+            deleteButton.setDisable(true);
+            return;}
         disName.setText(friends.getName());
         disPhone.setText(Integer.toString(friends.getPhoneNum()));
         deleteButton.setDisable(false);
@@ -44,15 +47,18 @@ public class Controller {
     public void deleteFriend(ActionEvent actionEvent) {
         Friends friends;
         friends = friendList.getSelectionModel().getSelectedItem();
-        int i = friendList.getSelectionModel().getSelectedIndex();
+        if(friendList.getSelectionModel().getSelectedItem() == null){
+            deleteButton.setDisable(true);
+            return;}
+        else{ int i = friendList.getSelectionModel().getSelectedIndex();
             friendList.getItems().remove(i);
             disName.setText("");
             disPhone.setText("");
-            if (friendList.getFixedCellSize() == 0){
-                deleteButton.setDisable(true);
-            }
+            deleteButton.setDisable(true);
+
+
         }
-    }
+    }}
 
 
 

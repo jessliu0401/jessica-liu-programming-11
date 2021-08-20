@@ -1,5 +1,9 @@
 package sample;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class Friends {
     //fields
    private String name;
@@ -24,8 +28,14 @@ public class Friends {
         public void setPhoneNum(int phoneNum) {
             this.phoneNum = phoneNum; }
 
-
-
+public void writeToFile() throws IOException{
+    FileWriter fwrite = new FileWriter("friends.txt",true);
+    BufferedWriter bwrite = new BufferedWriter(fwrite);
+    bwrite.write(name + ",\r");
+    bwrite.write(Integer.toString(phoneNum)+"\r");
+    bwrite.close();
+}
+//tostirng
 public String toString(){
         return name;
 }
