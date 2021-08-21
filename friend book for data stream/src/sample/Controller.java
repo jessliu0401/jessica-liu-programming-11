@@ -66,19 +66,18 @@ public class Controller {
 
     public void saveFriends(ActionEvent actionEvent) throws IOException {
         ObservableList<Friends> saveList = friendList.getItems();
-        for (Friends friends : saveList){
+        for (Friends friends : saveList) {
             friends.writeToFile();
+        }
             friendList.getItems().clear();
         }
 
-    }
 
     public void loadFriend(ActionEvent actionEvent) throws IOException {
 friendList.getItems().clear();
         ArrayList<Friends> friends = CreateFriends.createAllFriends("friends.txt");
         for (Friends f : friends){
-            friendList.getItems().add(f);
-        }
+            friendList.getItems().add(f); }
     }
 }
 

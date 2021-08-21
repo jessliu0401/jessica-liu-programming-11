@@ -28,6 +28,7 @@ public class Friends {
         public void setPhoneNum(int phoneNum) {
             this.phoneNum = phoneNum; }
 
+    //
     public void writeToFile() throws IOException {
         FileWriter fwrite = new FileWriter("friends.txt",true);
         BufferedWriter bwrite = new BufferedWriter(fwrite);
