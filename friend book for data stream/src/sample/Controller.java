@@ -9,6 +9,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -63,23 +66,61 @@ public class Controller {
 
         }
     }
-
+//for save to friend button
     public void saveFriends(ActionEvent actionEvent) throws IOException {
         ObservableList<Friends> saveList = friendList.getItems();
+        String s = "friends.txt";
         for (Friends friends : saveList) {
-            friends.writeToFile();
-        }
+            friends.writeToFile(s); }
+        String af ="allFriends.txt";
+    for (Friends friends : saveList) {
+        friends.writeToFile(af); }
+            friendList.getItems().clear(); }
+
+        // for load friends button
+        public void loadFriend(ActionEvent actionEvent) throws IOException {
             friendList.getItems().clear();
+            ArrayList<Friends> friends = CreateFriends.createAllFriends("friends.txt");
+            for (Friends g : friends) {
+                    friendList.getItems().add(g);
+                }
+            }
+
+// for save to best friend button
+public void saveBf(ActionEvent actionEvent) throws IOException {
+    ObservableList<Friends> saveList = friendList.getItems();
+    String s = "bestFriend.txt";
+    for (Friends friends : saveList) {
+        friends.writeToFile(s); }
+    String af ="allFriends.txt";
+    for (Friends friends : saveList) {
+        friends.writeToFile(af); }
+    friendList.getItems().clear();}
+
+    // for load best friends button
+    public void loadBf(ActionEvent actionEvent) throws IOException {
+        friendList.getItems().clear();
+        ArrayList<Friends> friends = CreateFriends.createAllFriends("bestFriend.txt");
+        for (Friends f : friends) {
+            friendList.getItems().add(f);
         }
-
-
-    public void loadFriend(ActionEvent actionEvent) throws IOException {
-friendList.getItems().clear();
-        ArrayList<Friends> friends = CreateFriends.createAllFriends("friends.txt");
-        for (Friends f : friends){
+    }
+    //for load all friend button
+    public void loadAll(ActionEvent actionEvent) throws IOException {
+        friendList.getItems().clear();
+        ArrayList<Friends> friends = CreateFriends.createAllFriends("allFriends.txt");
+        for (Friends f : friends) {
             friendList.getItems().add(f); }
     }
-}
+    }
+
+
+
+
+
+
+
+
 
 
 

@@ -58,11 +58,14 @@
                         </Label>
                         <Label layoutX="257.0" layoutY="137.0" text="Name:" />
                         <Label layoutX="257.0" layoutY="237.0" text="Phone Number:" />
-                        <Button fx:id="deleteButton" layoutX="530.0" layoutY="381.0" mnemonicParsing="false" onAction="#deleteFriend" text="Delete Friend" />
+                        <Button fx:id="deleteButton" layoutX="531.0" layoutY="368.0" mnemonicParsing="false" onAction="#deleteFriend" text="Delete Friend" />
                         <Label fx:id="disName" layoutX="404.0" layoutY="137.0" />
                         <Label fx:id="disPhone" layoutX="404.0" layoutY="237.0" />
-                        <Button fx:id="saveButton" layoutX="248.0" layoutY="378.0" mnemonicParsing="false" onAction="#saveFriends" prefHeight="30.0" prefWidth="74.0" text="Save all" />
-                        <Button fx:id="loadButton" layoutX="395.0" layoutY="380.0" mnemonicParsing="false" onAction="#loadFriend" text="Load all" />
+                        <Button fx:id="saveButton" layoutX="249.0" layoutY="301.0" mnemonicParsing="false" onAction="#saveFriends" prefHeight="30.0" prefWidth="103.0" text="Save to friends" />
+                        <Button fx:id="loadButton" layoutX="546.0" layoutY="303.0" mnemonicParsing="false" onAction="#loadAll" text="Load all" />
+                        <Button layoutX="398.0" layoutY="303.0" mnemonicParsing="false" onAction="#loadFriend" text="Load Friends" />
+                        <Button layoutX="248.0" layoutY="368.0" mnemonicParsing="false" onAction="#saveBf" text="Save to Best Friends" />
+                        <Button layoutX="398.0" layoutY="368.0" mnemonicParsing="false" onAction="#loadBf" text="Load Best Friends" />
                      </children>
                   </AnchorPane>
                </content>
