@@ -20,6 +20,7 @@ public class Create {
         bRead = new BufferedReader(fRead);
         String line;
         String itemString = "";
+        //split the recorded informations into seperate strings transform them into information needed to recreate the objects
         while ((line = bRead.readLine()) != null) {
             if (!line.equals(";")) {
                 itemString += line;
@@ -36,6 +37,7 @@ public class Create {
         int pos = 0;
         String itemName = "";
         int cost = 0;
+        //split the recorded informations into seperate strings transform them into information needed to recreate the objects
         for (int i = 0; i < string.length(); i++) {
             if (string.substring(i, i + 1).equals(",")) {
                 pos = i;
@@ -53,6 +55,7 @@ public class Create {
         bRead = new BufferedReader(fRead);
         String line;
         String itemString = "";
+        //split the recorded informations into seperate strings transform them into information needed to recreate the objects
         while ((line = bRead.readLine()) != null) {
             if (!line.equals(";")) {
                 itemString += line;
@@ -85,6 +88,7 @@ public class Create {
         bRead = new BufferedReader(fRead);
         String line;
         String itemString = "";
+        //split the recorded informations into seperate strings transform them into information needed to recreate the objects
         while ((line = bRead.readLine()) != null) {
             if (!line.equals(";")) {
                 itemString += line;

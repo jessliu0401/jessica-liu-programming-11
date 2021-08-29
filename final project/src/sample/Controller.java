@@ -17,19 +17,19 @@ public class Controller {
     public TextField itemName;//item name
     public TextField totalCost;//cost
     //receive funding tab
-    public TextField patronName;
-    public TextField patronDonate;
+    public TextField patronName;//to take in the name of the person/organization the funding is from
+    public TextField patronDonate;//to take in the amount they gave to the school
     //pay teacher tab
-    public TextField teachName;
-    public TextField teachSalary;
+    public TextField teachName;//to record which teacher are we paying
+    public TextField teachSalary;//to record how much the school paid for the teacher
     //view balance tab
     public ListView teachPay= new ListView<>();//displays records of payment
     public ListView fundReceived= new ListView<>();//displays records of funds received
     public ListView transactionList = new ListView<>();//displays records of school purchases
     public Label balance;//set to display balance
     public Button initializeButton;//initializes system
-    public Button payButton;
-    public Button purchaseButton;
+    public Button payButton;//button to pay to teachers
+    public Button purchaseButton;//button to complete purchases
 
     public void getMinistryFund(ActionEvent actionEvent) throws IOException {
         //request to receive 3000$ fund from the ministry of education
@@ -52,12 +52,12 @@ public class Controller {
 //for purchase tab where you buy stuff for the school and spend money
 
     public void purchaseItem(ActionEvent actionEvent) throws IOException {
-        Purchase p = new Purchase(itemName.getText(),Integer.parseInt(totalCost.getText()));
-        transactionList.getItems().add(p);
-        schoolBalance = schoolBalance - Integer.parseInt(totalCost.getText());
+        Purchase p = new Purchase(itemName.getText(),Integer.parseInt(totalCost.getText()));//create an object using the fields entered in the textfields
+        transactionList.getItems().add(p);// add this to the listview in the view balance tab
+        schoolBalance = schoolBalance - Integer.parseInt(totalCost.getText());//update balance
         balance.setText(Integer.toString(schoolBalance));
-        p.writeToFile("purchaseRecord.txt");
-        itemName.clear();
+        p.writeToFile("purchaseRecord.txt");//put this purchase into the txt file to be bring up later
+        itemName.clear();//clear textfield for next use
         totalCost.clear();
         //if after purchase the school is in dept, then the school would need to request more money first before purchasing
         if(schoolBalance <= 0){
@@ -67,9 +67,9 @@ public class Controller {
     }
 //a tab to pay teachers
     public void sendPay(ActionEvent actionEvent) throws IOException {
-        Teacher t = new Teacher(teachName.getText(), Integer.parseInt(teachSalary.getText()));
-        teachPay.getItems().add(t);
-        schoolBalance = schoolBalance - Integer.parseInt(teachSalary.getText());
+        Teacher t = new Teacher(teachName.getText(), Integer.parseInt(teachSalary.getText()));//create an object using the fields entered in the textfields
+        teachPay.getItems().add(t);// add this to the listview in the view balance tab
+        schoolBalance = schoolBalance - Integer.parseInt(teachSalary.getText());//update balance
         balance.setText(Integer.toString(schoolBalance));
         t.writeToFile("payRecord.txt");
         teachName.clear();
@@ -83,17 +83,16 @@ public class Controller {
 
 //a tab to receive donations from individuals to the school
     public void addDonation(ActionEvent actionEvent) throws IOException {
-        Funding f = new Funding(patronName.getText(), Integer.parseInt(patronDonate.getText()));
-        fundReceived.getItems().add(f);
-        schoolBalance = schoolBalance + Integer.parseInt(patronDonate.getText());
+        Funding f = new Funding(patronName.getText(), Integer.parseInt(patronDonate.getText()));//create an object using the fields entered in the textfields
+        fundReceived.getItems().add(f);// add this to the listview in the view balance tab
+        schoolBalance = schoolBalance + Integer.parseInt(patronDonate.getText());//update balance
         balance.setText(Integer.toString(schoolBalance));
         f.writeToFile("fundRecord.txt");
         patronName.clear();
         patronDonate.clear();
-            payButton.setDisable(false);
+            payButton.setDisable(false);//after receiving a fund, the school will have money to spend. If the purchase buttons are disabled before due to dept, now we could enable it
             purchaseButton.setDisable(false);
-        //if after purchase the school is in dept, we disable purchase buttons. Then the school would need to request more money first before purchasing
-        if(schoolBalance <= 0){
+        if(schoolBalance <= 0){//we check balance again. if after receiving fund the school is still in dept, the purchase buttons are disabled
             payButton.setDisable(true);
             purchaseButton.setDisable(true);
         }
@@ -102,6 +101,7 @@ public class Controller {
 
 //before using this system, we MUST use this method to load up all past records of purchase
     public void initialize(ActionEvent actionEvent) throws IOException {
+        // this is to retreive information from the txt files and load it up in the records of the application
         transactionList.getItems().clear();
         fundReceived.getItems().clear();
         teachPay.getItems().clear();
