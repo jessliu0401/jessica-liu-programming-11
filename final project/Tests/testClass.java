@@ -1,5 +1,6 @@
 import org.junit.Before;
 import org.junit.Test;
+import sample.Controller;
 import sample.Funding;
 import sample.Purchase;
 import sample.Teacher;
@@ -15,26 +16,25 @@ public class testClass {
 
 
     @Test
-    public void testPurchaseToString(){
-        Purchase purchase = new Purchase("testItem",100);
-        String s = purchase.toString();
-        assertEquals(s,"testItem\t\t\t- 100$");
+    public void testPurchaseUpdate(){
+        Controller.schoolBalance = 1000;
+        Controller.addPurchase("100");
+        assertEquals(Controller.schoolBalance,900);
+    }
+
+    @Test
+    public void testPayUpdate(){
+        Controller.schoolBalance = 1000;
+        Controller.addPay("100");
+        assertEquals(Controller.schoolBalance,900);
 
     }
 
     @Test
-    public void testFundingToString(){
-        Funding funding = new Funding("testPatron" , 200);
-        String f = funding.toString();
-        assertEquals(f, "testPatron\t\t\t+200$");
-
-    }
-
-    @Test
-    public void testTeacherToString(){
-        Teacher bob = new Teacher("bobson", 3000);
-        String a = bob.toString();
-        assertEquals(a,"Pay to bobson\t\t3000$");
+    public void testFundingUpdate(){
+        Controller.schoolBalance = 1000;
+        Controller.addDonate("100");
+        assertEquals(Controller.schoolBalance,1100);
     }
 
 

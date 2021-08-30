@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 //used to launch the application
 public class Main extends Application {
-
+//Please press the initialize button (located at the top right coroner) at the start of each launch
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));

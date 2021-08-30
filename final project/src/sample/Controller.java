@@ -54,7 +54,7 @@ public class Controller {
     public void purchaseItem(ActionEvent actionEvent) throws IOException {
         Purchase p = new Purchase(itemName.getText(),Integer.parseInt(totalCost.getText()));//create an object using the fields entered in the textfields
         transactionList.getItems().add(p);// add this to the listview in the view balance tab
-        schoolBalance = schoolBalance - Integer.parseInt(totalCost.getText());//update balance
+       addPurchase(totalCost.getText());
         balance.setText(Integer.toString(schoolBalance));
         p.writeToFile("purchaseRecord.txt");//put this purchase into the txt file to be bring up later
         itemName.clear();//clear textfield for next use
@@ -65,11 +65,15 @@ public class Controller {
             purchaseButton.setDisable(true);
         }
     }
+    public static void addPurchase(String amount){
+        int change = Integer.parseInt(amount);
+        schoolBalance = schoolBalance - change; }
+
 //a tab to pay teachers
     public void sendPay(ActionEvent actionEvent) throws IOException {
         Teacher t = new Teacher(teachName.getText(), Integer.parseInt(teachSalary.getText()));//create an object using the fields entered in the textfields
         teachPay.getItems().add(t);// add this to the listview in the view balance tab
-        schoolBalance = schoolBalance - Integer.parseInt(teachSalary.getText());//update balance
+        addPay(teachSalary.getText());
         balance.setText(Integer.toString(schoolBalance));
         t.writeToFile("payRecord.txt");
         teachName.clear();
@@ -80,12 +84,15 @@ public class Controller {
             purchaseButton.setDisable(true);
         }
     }
+    public static void addPay(String amount){
+        int change = Integer.parseInt(amount);
+        schoolBalance = schoolBalance - change; }
 
 //a tab to receive donations from individuals to the school
     public void addDonation(ActionEvent actionEvent) throws IOException {
         Funding f = new Funding(patronName.getText(), Integer.parseInt(patronDonate.getText()));//create an object using the fields entered in the textfields
         fundReceived.getItems().add(f);// add this to the listview in the view balance tab
-        schoolBalance = schoolBalance + Integer.parseInt(patronDonate.getText());//update balance
+        addDonate(patronDonate.getText());
         balance.setText(Integer.toString(schoolBalance));
         f.writeToFile("fundRecord.txt");
         patronName.clear();
@@ -96,8 +103,11 @@ public class Controller {
             payButton.setDisable(true);
             purchaseButton.setDisable(true);
         }
-
     }
+    //method to update balance
+    public static void addDonate(String amount){
+        int change = Integer.parseInt(amount);
+        schoolBalance = schoolBalance + change; }
 
 //before using this system, we MUST use this method to load up all past records of purchase
     public void initialize(ActionEvent actionEvent) throws IOException {
